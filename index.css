@@ -1,7 +1,7 @@
 @font-face {
   font-family: "FiraSans";
-  src: url("fonts/FiraSans-Regular.woff") format("woff2"),
-       url("fonts/FiraSans-Regular.woff") format("woff");
+  src: url("fonts/FiraSans-Medium.woff") format("woff2"),
+       url("fonts/FiraSans-Medium.woff") format("woff");
 }
 
 :root {
