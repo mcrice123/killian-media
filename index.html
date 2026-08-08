@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Maria Killian, Web Developer</title>
+        <!-- Facebook meta tags -->
+        <!-- <meta property="og:title" content="Maria Killian, Killian Media LLC" />
+        <meta property="og:description" content="Freelance Web Developer in Aurora, CO offering software development services." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://killian-media.netlify.app/" />
+        <meta property="og:image" content="https://killian-media.netlify.app/assets/img/killian-media-social.png" /> -->
+        <!-- End of Facebook meta tags -->
+
+        <!-- Twitter meta tags -->
+        <!-- <meta name="twitter:title" content="Maria Killian, Killian Media LLC">
+        <meta name="twitter:description" content="Freelance Web Developer in Aurora, CO offering software development services.">
+        <meta name="twitter:card" content="summary_large_image"> -->
+        <!-- End of Twitter meta tags -->
+
+        <!-- Styling and JavaScript -->
+        <link rel="stylesheet" href="uikit/css/uikit.min.css" />
+        <script src="uikit/js/uikit.min.js"></script>
+        <link rel="stylesheet" href="index.css">
+        <script src="application.js"></script>
+    </head>
+<body class="uk-width-1-1 uk-background-primary">
+    <!-- Navigation-->
+    <nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar="true">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-brand" href="#home">Killian Media LLC</a>
+        </div>
+        <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav" data-uk-navbar="true">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav" data-uk-navbar="true">
+                <li><a class="uk-button uk-button-primary" href="#contact">Available for Freelance</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home section -->
+        <section id="home" 
+            style="background-image: url('img/cloud.svg'); background-position: calc(100% + 110px) 10px; background-size: 70%;" 
+            class="uk-container uk-text-center uk-flex uk-flex-row uk-flex-middle uk-flex-center uk-background-norepeat uk-background-contain uk-position-relative"
+        >
+            <div class="uk-flex uk-flex-column width-1-2">
+                <h4>Frontend Web Developer</h4>
+                <h1>Building <span>Modern</span> Experiences</h1>
+                <p>
+                    I build responsive, user-friendly websites and applications using the latest technologies.
+                </p> 
+                <a href="#contact" class="uk-button uk-button-primary">Let's Work Together</a>
+            </div>
+
+            <img src="img/avatar_no_bg.png" alt="Maria Killian" class="uk-width-1-2">
+            <p id="home-location" class="sans-serif-all-caps">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370.85 512">
+                    <path d="M185.43,0C83.18,0,0,83.18,0,185.43c0,126.89,165.94,313.17,173,321.04,6.64,7.39,18.22,7.38,24.85,0,7.07-7.87,173-194.15,173-321.04,0-102.24-83.18-185.43-185.43-185.43ZM185.43,278.72c-51.44,0-93.29-41.85-93.29-93.29s41.85-93.29,93.29-93.29,93.29,41.85,93.29,93.29-41.85,93.29-93.29,93.29Z"/>
+                </svg>
+                Based in <span>Denver</span>
+            </p>
+        </section>
+
+        <!-- About section -->
+        <section id="about" class="uk-container uk-text-center">
+            <h1 class="sans-serif-all-caps"><span id="about_intro">Hi, I'm </span><span id="about_maria">Maria</span> <span id="about_killian">Killian</span></h1>
+            <p>
+                I am a frontend web developer with a passion for creating responsive, user-friendly websites and applications.
+            </p>
+        </section>
+
+        <!-- Work section -->
+        <section id="work" class="uk-container uk-text-center">
+            <h1 class="sans-serif-all-caps">Featured Work</h1>
+            <p>From concept to code: A look at my recent projects.</p>
+        </section>
+
+        <!-- Services section -->
+         <section id="services" class="uk-container uk-text-center">
+            <h1 class="sans-serif-all-caps">Services</h1>
+            <h2>Example Quotes</h2>
+            <table class="uk-flex uk-flex-column uk-flex-middle uk-text-left">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Quote</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Single-Page Website</td>
+                        <td>$2,500</td>
+                    </tr>
+                    <tr>
+                        <td>5-Page Website</td>
+                        <td>$5,000</td>
+                    </tr>
+                    <tr>
+                        <td>5-Page Website + Blog</td>
+                        <td>$10,000</td>
+                    </tr>
+                    <tr>
+                        <td>Internal Dashboard (Basic)</td>
+                        <td>$30,000</td>
+                    </tr>
+                    <tr>
+                        <td>Internal Dashboard (Super)</td>
+                        <td>Contact me for details</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Subscription Plans</h2>
+            <h3>Monthly Maintenance</h3>
+            <p>Includes domain management, security updates and minor content changes.</p>
+            <table class="uk-flex uk-flex-column uk-flex-middle uk-text-left">
+                <thead>
+                    <tr>
+                        <th>Rate per Month</th>
+                        <th>Developer Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$25</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>$10</td>
+                        <td>2 hours</td>
+                    </tr>
+                    <tr>
+                        <td>$5</td>
+                        <td>1 hour</td>
+                    </tr>
+                </tbody>
+            </table>
+         </section>
+
+         <!-- Contact section -->
+        <section id="contact" class="uk-container uk-text-center">
+            <h1>Let's Work Together</h1>
+            <p>Submit the form below to redeem a complimentary one-hour consultation!</p>
+            <p>[First/Last Name, (Company), Email, Phone Number, Message]</p>
+        </section>
+
+         <!-- Footer -->
+        <footer class="uk-text-center footer uk-flex uk-flex-column uk-flex-center">
+            <p>© <span id="copyright-year"></span> <strong>Killian Media LLC</strong></p>
+        </footer>
+    </main>
+</body>

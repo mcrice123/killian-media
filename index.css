@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "FiraSans";
+  src: url("fonts/FiraSans-Regular.ttf") format("truetype");
+}
+
+:root {
+  --main-color: #46cfc3;
+  --secondary-color: #ae3bb0;
+  --background-color: #f5f5f5;
+  --alt-1-color: #3f79c7;
+  --alt-2-color: #8a45ba;
+  --sans-serif-font: "FiraSans", sans-serif;
+
+  @media (prefers-color-scheme: dark) {
+    --main-color: #46cfc3;
+    --secondary-color: #ae3bb0;
+    --background-color: #1a1a1a;
+  }
+}
+
+/* Override UIKit default styles */
+.uk-background-primary {
+    background-color: var(--background-color) !important;
+}
+
+/* Additional custom styles */
+.sans-serif-all-caps {
+    font-family: var(--sans-serif-font);
+    text-transform: uppercase;
+}
+
+#home-location {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    color: #f5f5f5;
+
+    svg {
+        height: 18px;
+        margin-top: -4px;
+        width: auto;
+        fill: #f5f5f5;
+    }
+}
