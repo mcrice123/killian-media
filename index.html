@@ -20,36 +20,34 @@
         <!-- End of Twitter meta tags -->
 
         <!-- Styling and JavaScript -->
-        <link rel="stylesheet" href="uikit/css/uikit.min.css" />
-        <script src="uikit/js/uikit.min.js"></script>
         <link rel="stylesheet" href="index.css">
         <script src="application.js"></script>
     </head>
-<body class="uk-width-1-1 uk-background-primary">
+<body id="mk-page">
     <!-- Navigation-->
-    <nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar="true">
-        <div class="uk-navbar-left">
-            <a class="uk-navbar-brand" href="#home">Killian Media LLC</a>
+    <nav class="mk-navbar">
+        <div class="mk-navbar-left">
+            <a class="mk-navbar-brand" href="#home">Killian Media LLC</a>
         </div>
-        <div class="uk-navbar-center">
-            <ul class="uk-navbar-nav" data-uk-navbar="true">
+        <div class="mk-navbar-center">
+            <ul class="mk-navbar-nav">
                 <li><a href="#about">About</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-        <div class="uk-navbar-right">
-            <ul class="uk-navbar-nav" data-uk-navbar="true">
+        <div class="mk-navbar-right">
+            <ul class="mk-navbar-nav">
                 <li>
-                    <p>Available for
-                        <label class="toggle-switch">
+                    <a href="#contact">Available for <span>Hire</span> / <span>Freelance</span>
+                        <!-- <label class="toggle-switch">
                             <input type="checkbox" id="hire-checkbox" />
                             <span class="toggle-label">Hire</span>
                             <span class="slider"></span>
                             <span class="toggle-label">Freelance</span>
-                        </label>
-                    </p>
+                        </label>-->
+                    </a>
                 </li>
             </ul>
         </div>
@@ -57,21 +55,20 @@
 
     <main>
         <!-- Home section -->
-        <section id="home" 
-            style="background-image: url('img/cloud.svg'); background-position: calc(100% + 110px) 10px; background-size: 70%;" 
-            class="uk-container uk-text-center uk-flex uk-flex-row uk-flex-middle uk-flex-center uk-background-norepeat uk-background-contain uk-position-relative"
+        <section id="home"
+            class="mk-container mk-text-center"
         >
-            <div class="uk-flex uk-flex-column width-1-2">
+            <div class="mk-flex mk-flex-column width-1-2">
                 <h4>Frontend Web Developer</h4>
                 <h1>Building <span>Modern</span> Experiences</h1>
                 <p>
                     I build responsive, user-friendly websites and applications using the latest technologies.
                 </p> 
-                <a href="#contact" class="uk-button uk-button-primary">Let's Work Together</a>
+                <a href="#contact" class="mk-button mk-button-primary">Let's Work Together</a>
             </div>
 
-            <img src="img/avatar_no_bg.png" alt="Maria Killian" class="uk-width-1-2">
-            <p id="home-location" class="sans-serif-all-caps">
+            <img src="img/avatar_no_bg.png" alt="Maria Killian" class="mk-width-1-2">
+            <p id="home-location" class="mk-sans-serif-all-caps">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370.85 512">
                     <path d="M185.43,0C83.18,0,0,83.18,0,185.43c0,126.89,165.94,313.17,173,321.04,6.64,7.39,18.22,7.38,24.85,0,7.07-7.87,173-194.15,173-321.04,0-102.24-83.18-185.43-185.43-185.43ZM185.43,278.72c-51.44,0-93.29-41.85-93.29-93.29s41.85-93.29,93.29-93.29,93.29,41.85,93.29,93.29-41.85,93.29-93.29,93.29Z"/>
                 </svg>
@@ -80,41 +77,150 @@
         </section>
 
         <!-- About section -->
-        <section id="about" class="uk-container uk-text-center">
+        <section id="about" class="mk-container mk-text-center">
             <h1 class="sans-serif-all-caps"><span id="about_intro">Hi, I'm </span><span id="about_maria">Maria</span> <span id="about_killian">Killian</span></h1>
             <p>
                 I am a frontend web developer with a passion for creating responsive, user-friendly websites and applications.
             </p>
         </section>
 
+        <!-- Tech Marquee -->
+        <section class="tech-marquee" id="tech-marquee">
+
+            <p class="marquee-label">Tools &amp; Technologies</p>
+
+            <div class="marquee-mask">
+                <div class="marquee-track" id="tm-track">
+                    <div class="logo-item">
+                        <img src="img/wp-logo.svg" alt="WordPress" />
+                    </div>
+                    <div class="logo-item">
+                        <img src="img/ruby-on-rails.svg" alt="Ruby on Rails" />
+                    </div>
+                    <div class="logo-item">
+                        <img src="img/laravel.svg" alt="Laravel" />
+                    </div>
+                    <div class="logo-item">
+                        <img src="img/sass.svg" alt="Sass" />
+                    </div>
+                    <div class="logo-item">
+                        <img src="img/react-logo.svg" alt="React" />
+                    </div>
+                    <div class="logo-item">
+                        <img src="img/adobe.svg" alt="Adobe Creative Suite" />
+                    </div>
+                    <div class="logo-item">
+                        <img src="img/git.svg" alt="Git" />
+                    </div>
+                    <!-- duplicated set for seamless loop -->
+                    <div class="logo-item" aria-hidden="true">
+                        <img src="img/wp-logo.svg" alt="WordPress" />
+                    </div>
+                    <div class="logo-item" aria-hidden="true">
+                        <img src="img/ruby-on-rails.svg" alt="Ruby on Rails" />
+                    </div>
+                    <div class="logo-item" aria-hidden="true">
+                        <img src="img/laravel.svg" alt="Laravel" />
+                    </div>
+                    <div class="logo-item" aria-hidden="true">
+                        <img src="img/sass.svg" alt="Sass" />
+                    </div>
+                    <div class="logo-item" aria-hidden="true">
+                        <img src="img/react-logo.svg" alt="React" />
+                    </div>
+                    <div class="logo-item" aria-hidden="true">
+                        <img src="img/adobe.svg" alt="Adobe Creative Suite" /> 
+                    </div>
+                    <div class="logo-item" aria-hidden="true">
+                        <img src="img/git.svg" alt="Git" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Work section -->
-        <section id="work" class="uk-container uk-text-center">
-            <h1 class="sans-serif-all-caps section-heading">Featured Work</h1>
-            <p>From concept to code: A look at my shipped projects.</p>
-            <ul>
-                <li>
-                    <h3>Amber Waves Diving</h3>
-                    <p>WordPress website for a local diving school.</p>
-                    <a href="https://amberwavesdiving.com/" target="_blank">View Live Site</a>
-                </li>
-                <li>
-                    <h3>Bramble's Edge Farm</h3>
-                    <p>WordPress website for a local farm and event venue.</p>
-                    <a href="https://bramblesedgefarm.com/" target="_blank">View Live Site</a>
-                </li>
-                <li>
+        <section id="work">
+            <button class="theme-toggle" id="theme-toggle" aria-pressed="false">
+                <span id="theme-toggle-label">☀ light</span>
+            </button>
+
+            <div class="mk-inner">
+                <div class="mk-header">
+                    <div>
+                        <p class="mk-eyebrow">Featured Work</p>
+                        <h2>Sites I've built, by stack</h2>
+                    </div>
+                    <div class="filters" role="group" aria-label="Filter projects by stack">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="cms">&lt;CMS&gt;</button>
+                        <button class="filter-btn" data-filter="mvc">&lt;MVC&gt;</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <article class="card" data-category="cms" tabindex="0">
+                    <span class="tag cms">&lt;CMS&gt; ExpressionEngine</span>
                     <h3>Prairie View</h3>
-                    <p>ExpressionEngine website for mental health organization.</p>
-                    <a href="https://prairieview.org/" target="_blank">View Live Site</a>
-                </li>
-            </ul>
+                    <p>Healthcare site built from scratch off designer wireframes, with hand-tuned scroll parallax and full responsive ownership. Live and largely unchanged five years on.</p>
+                    <div class="stack-row">
+                    <span class="stack-pill">ExpressionEngine</span>
+                    <span class="stack-pill">jQuery</span>
+                    <span class="stack-pill">Responsive CSS</span>
+                    </div>
+                    <div class="card-footer">
+                    View case study
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </article>
+
+                <article class="card" data-category="cms" tabindex="0">
+                    <span class="tag cms">&lt;CMS&gt; WordPress</span>
+                    <h3>Amber Waves Diving</h3>
+                    <p>Scuba and swim lesson site with custom post types for classes, trips, staff, and shop I built and templated myself, layered under a designer's Photoshop comps.</p>
+                    <div class="stack-row">
+                    <span class="stack-pill">WordPress</span>
+                    <span class="stack-pill">Custom Post Types</span>
+                    <span class="stack-pill">Responsive CSS</span>
+                    </div>
+                    <div class="card-footer">
+                    View case study
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </article>
+
+                <article class="card" data-category="cms" tabindex="0">
+                    <span class="tag cms">&lt;CMS&gt; WordPress</span>
+                    <h3>Bramble's Edge Farm</h3>
+                    <p>Agritourism and event site built from scratch, translating Photoshop wireframes into a fully responsive WordPress build.</p>
+                    <div class="stack-row">
+                    <span class="stack-pill">WordPress</span>
+                    <span class="stack-pill">Responsive CSS</span>
+                    </div>
+                    <div class="card-footer">
+                    View case study
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </article>
+
+                <article class="card placeholder-card" data-category="mvc" tabindex="-1">
+                    <span class="tag mvc">&lt;MVC&gt; React / Gatsby</span>
+                    <h3>Morphic (coming soon)</h3>
+                    <p>A React/Gatsby rebuild of a personal webcomic project, showcasing component-based frontend architecture. Redeploying soon.</p>
+                    <div class="stack-row">
+                    <span class="stack-pill">React</span>
+                    <span class="stack-pill">Gatsby</span>
+                    <span class="stack-pill">GraphQL</span>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <!-- Services section -->
-         <section id="services" class="uk-container uk-text-center">
-            <h1 class="sans-serif-all-caps section-heading">Services</h1>
+         <section id="services" class="mk-container mk-text-center">
+            <h1 class="mk-sans-serif-all-caps mk-section-heading">Services</h1>
             <h2>Example Quotes</h2>
-            <table class="uk-flex uk-flex-column uk-flex-middle uk-text-left">
+            <table class="mk-flex mk-flex-column mk-flex-middle mk-text-left">
                 <thead>
                     <tr>
                         <th>Description</th>
@@ -147,7 +253,7 @@
             <h2>Subscription Plans</h2>
             <h3>Monthly Maintenance</h3>
             <p>Includes domain management, security updates and minor content changes.</p>
-            <table class="uk-flex uk-flex-column uk-flex-middle uk-text-left">
+            <table class="mk-flex mk-flex-column mk-flex-middle mk-text-left">
                 <thead>
                     <tr>
                         <th>Rate per Month</th>
@@ -172,14 +278,27 @@
          </section>
 
          <!-- Contact section -->
-        <section id="contact" class="uk-container uk-text-center">
+        <section id="contact" class="mk-container mk-text-center">
             <h1>Let's Work Together</h1>
-            <p>Submit the form below to redeem a complimentary one-hour consultation!</p>
+            <p>Submit your contact information to redeem a complimentary one-hour consultation!</p>
+            <a href="#" class="mk-button-primary">Contact me</a>
+
+            <!-- Social Links -->
+            <div class="mk-flex mk-flex-center">
+                <a href="https://www.linkedin.com/in/maria-c-killian" target="_blank" rel="noopener noreferrer" class="mk-icon-button" aria-label="LinkedIn">
+                    <img src="img/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/mcrice123" target="_blank" rel="noopener noreferrer" class="mk-icon-button" aria-label="GitHub">
+                    <img src="img/github.svg" alt="GitHub">
+                </a>
+            </div>
+
+            <!-- Inside modal-->
             <p>[First/Last Name, (Company), Email, Phone Number, Message]</p>
         </section>
 
          <!-- Footer -->
-        <footer class="uk-text-center footer uk-flex uk-flex-column uk-flex-center">
+        <footer id="mk-footer">
             <p>© <span id="copyright-year"></span> <strong>Killian Media LLC</strong></p>
         </footer>
     </main>
