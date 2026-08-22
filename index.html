@@ -274,8 +274,7 @@
         <section id="contact" class="mk-container mk-text-center">
             <h1>Let's Work Together</h1>
             <p>Submit your contact information to redeem a complimentary one-hour consultation!</p>
-            <a href="#" class="mk-button-primary mk-large">Contact me</a>
-
+            <a href="#modal" class="mk-button-primary mk-large mk__modal_btn">Contact me</a>
             <!-- Social Links -->
             <div class="mk-flex mk-flex-center">
                 <a href="https://www.linkedin.com/in/maria-c-killian" target="_blank" rel="noopener noreferrer" class="mk-icon-button" aria-label="LinkedIn">
@@ -290,8 +289,42 @@
                 </a>
             </div>
 
-            <!-- Inside modal-->
-            <p>[First/Last Name, (Company), Email, Phone Number, Message]</p>
+            <!-- Modal Contact Form -->
+            <div id="modal" class="mk-modal">
+                <div class="mk-modal-inner">
+                    <div class="mk-modal__photo">
+                        <img src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&s=9980646201037d28700d826b1bd096c4&auto=format&fit=crop&w=700&q=80" alt="">
+                    </div>
+                    <div class="mk-modal__text">
+                        <form>
+                            <div class="mk-field">
+                                <label for="name" aria-required="true">Name</label>
+                                <input type="text" value="name" required>
+                            </div>
+                            <div class="mk-field">
+                                <label for="company">Company</label>
+                                <input type="text" value="company">
+                            </div>
+                            <div class="mk-field">
+                                <label for="email" aria-required="true">Email</label>
+                                <input type="email" value="Email" required>
+                            </div>
+                            <div class="mk-field">
+                                <label for="phone">Phone Number</label>
+                                <input type="number" value="phone">
+                            </div>
+                            <div class="mk-field">
+                                <label for="message" aria-required="true">How can I help you?</label>
+                                <textarea value="message"></textarea>
+                            </div>
+                            <div class="mk-field">
+                                <input type="submit" class="mk-button-primary">
+                            </div>
+                        </form>
+                    </div>
+                    <a class="mk-modal__close" href="#">X</a> 
+                </div>           
+            </div>
         </section>
 
          <!-- Footer -->

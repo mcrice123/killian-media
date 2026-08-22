@@ -53,7 +53,32 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     })();
 
-    // Set Copyright Year in footer
+    /*=============== SHOW MODAL ===============*/
+    const openBtn = document.querySelector(".mk__modal_btn");
+    const modal = document.querySelector(".mk-modal");
+
+    if (openBtn && modal) {
+    openBtn.addEventListener("click", () => {
+        modal.classList.add("show-modal");
+    });
+    }
+
+    /*=============== CLOSE MODAL ===============*/
+    const closeBtn = document.querySelector(".mk-modal__close");
+
+    function closeModal() {
+        modal.classList.remove("show-modal");
+    }
+    closeBtn.addEventListener("click", closeModal);
+
+    /*====== ESC BUTTON TO CLOSE MODAL ======*/
+    document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        closeModal();
+    }
+    });
+
+    /*=============== SET COPYRIGHT YEAR ===============*/
     var copyright = document.getElementById("copyright-year");
     const year = new Date();
     copyright.innerHTML = year.getFullYear();
