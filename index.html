@@ -40,14 +40,10 @@
         <div class="mk-navbar-right">
             <ul class="mk-navbar-nav">
                 <li>
-                    <a href="#contact">Available for <span>Hire</span> / <span>Freelance</span>
-                        <!-- <label class="toggle-switch">
-                            <input type="checkbox" id="hire-checkbox" />
-                            <span class="toggle-label">Hire</span>
-                            <span class="slider"></span>
-                            <span class="toggle-label">Freelance</span>
-                        </label>-->
-                    </a>
+                    Mode
+                    <button class="mk-button" id="theme-toggle" aria-pressed="false">
+                        <span id="theme-toggle-label">☀ light</span>
+                    </button>
                 </li>
             </ul>
         </div>
@@ -59,12 +55,12 @@
             class="mk-container mk-text-center"
         >
             <div class="mk-flex mk-flex-column width-1-2">
-                <h4>Frontend Web Developer</h4>
-                <h1>Building <span>Modern</span> Experiences</h1>
+                <p class="mk-eyebrow">Frontend Web Developer</h4>
+                <h1>Building <span>Digital</span> Experiences</h1>
                 <p>
                     I build responsive, user-friendly websites and applications using the latest technologies.
                 </p> 
-                <a href="#contact" class="mk-button">Let's Work Together</a>
+                <a href="#contact" class="mk-button mk-large">Available for <span>Hire</span> / <span>Freelance</span></a>
             </div>
 
             <img src="img/avatar_no_bg.png" alt="Maria Killian" class="mk-width-1-2">
@@ -142,9 +138,6 @@
 
         <!-- Work section -->
         <section id="work">
-            <button class="theme-toggle" id="theme-toggle" aria-pressed="false">
-                <span id="theme-toggle-label">☀ light</span>
-            </button>
 
             <div class="mk-inner">
                 <div class="mk-header">
@@ -283,15 +276,19 @@
         <section id="contact" class="mk-container mk-text-center">
             <h1>Let's Work Together</h1>
             <p>Submit your contact information to redeem a complimentary one-hour consultation!</p>
-            <a href="#" class="mk-button-primary">Contact me</a>
+            <a href="#" class="mk-button-primary mk-large">Contact me</a>
 
             <!-- Social Links -->
             <div class="mk-flex mk-flex-center">
                 <a href="https://www.linkedin.com/in/maria-c-killian" target="_blank" rel="noopener noreferrer" class="mk-icon-button" aria-label="LinkedIn">
-                    <img src="img/linkedin.svg" alt="LinkedIn">
+                    <div>
+                        <img src="img/linkedin.svg" alt="LinkedIn">
+                    </div>
                 </a>
                 <a href="https://github.com/mcrice123" target="_blank" rel="noopener noreferrer" class="mk-icon-button" aria-label="GitHub">
-                    <img src="img/github.svg" alt="GitHub">
+                    <div>
+                        <img src="img/github.svg" alt="GitHub">
+                    </div>
                 </a>
             </div>
 
