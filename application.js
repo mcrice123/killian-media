@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Check for system dark mode preference and set the initial theme accordingly
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-    const section = document.getElementById('page');
+    const section = document.getElementById('mk-page');
     const toggle = document.getElementById('theme-toggle');
     const toggleLabel = document.getElementById('theme-toggle-label');
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Add event listeners for theme toggle and filter buttons
     (function() {
-      const section = document.getElementById('page');
+      const section = document.getElementById('mk-page');
       const toggle = document.getElementById('theme-toggle');
       const toggleLabel = document.getElementById('theme-toggle-label');
 

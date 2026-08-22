@@ -24,12 +24,18 @@
     --text-dim: #6B7378;
     --accent: #2F8F80;
     --accent-dim: #2F8F80;
+    --text-hover: #7FD4C8;
+    --bg-hover: #2E5C8A;
     --tag-cms: #A8641F;
     --tag-mvc: #2E5C8A;
     --border: #E3DFD8;
     --shadow: 0 1px 2px rgba(30,35,40,0.04), 0 8px 20px rgba(30,35,40,0.05);
     --logo-filter: grayscale(1) opacity(0.4);
     --logo-filter-hover: grayscale(0) opacity(1);
+    --heading-font: "Space Grotesk", "Inter", sans-serif;
+    --sans-serif-font: "Inter", system-ui, -apple-system, sans-serif;
+    --monospaced-font: "JetBrains Mono", monospace;
+    --white: #FFFFFF;
 
   @media (prefers-color-scheme: dark) {
     --bg: #141A21;
@@ -87,7 +93,7 @@
 }
 
 h1, h2 {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-family: var(--heading-font);
     font-size: clamp(32px, 4vw, 44px);
     font-weight: 600;
     margin: 0;
@@ -95,14 +101,14 @@ h1, h2 {
 }
 
 h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--heading-font);
     font-size: 22px;
     font-weight: 600;
     margin: 0;
 }
 
 .mk-eyebrow {
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-family: var(--monospaced-font);
     font-size: 13px;
     letter-spacing: 0.08em;
     color: var(--accent);
@@ -119,22 +125,51 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     margin: 0;
 }
 
-.mk-button {
-    font-family: var(--sans-serif-font);
+.mk-button,
+.mk-button-primary {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    outline: none;
     text-transform: uppercase;
-    font-size: 14px;
+    font-family: var(--monospaced-font);
+    font-size: 12px;
+    cursor: pointer;
+    border-image: none;
+    border-radius: 999px;
+    padding: 6px 14px;
+    color: var(--text-dim);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+
+    &.mk-large {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }   
+}
+
+.mk-button {
+    color: var(--text-dim);
+    background: var(--panel);
+
+    &:hover { color: var(--text); }
 }
 
 .mk-button-primary {
-    background-color: var(--main-color);
-    color: var(--background-color);
-}
+    color: var(--white);
+    background: var(--accent-dim);
+    border-width: medium;
+    border-style: none;
+    border-color: var(--accent-dim);
 
-.mk-sans-serif-all-caps {
-    font-family: var(--sans-serif-font);
-    text-transform: uppercase;
-
-    &.mk-section-heading { font-size: 14px; }
+    &:hover {
+        color: var(--white);
+        background: var(--bg-hover);
+    }
 }
 
 main { display: block; }
