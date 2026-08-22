@@ -219,6 +219,24 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     }   
 }
 
+.mk-tag {
+    font-family: var(--monospaced-font);
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.03em;
+    color: var(--white);
+    fill: var(--white);
+    background-color: var(--tag-cms);
+
+    &.cms { color: var(--tag-cms); background: rgba(217, 160, 91, 0.12); }
+    &.mvc { color: var(--tag-mvc); background: rgba(111, 168, 220, 0.12); }
+}
+
 main { display: block; }
 
 section { 
@@ -363,6 +381,7 @@ section {
     flex-direction: row;
     align-items: center;
     position: relative;
+    padding: 0 24px;
 }
 
 #home-location {
@@ -370,18 +389,12 @@ section {
     bottom: 10px;
     right: 10px;
     z-index: 2;
-    color: #f5f5f5;
-    font-family: var(--sans-serif-font);
-    text-transform: uppercase;
-    font-size: 14px;
-    text-shadow: 2px 1px 2px var(--alt-2-color);
 
     svg {
         height: 18px;
         margin-top: -4px;
         width: auto;
-        fill: #f5f5f5;
-        filter: drop-shadow(2px 1px 2px var(--alt-2-color));
+        fill: currentColor;
     }
 }
 
@@ -563,20 +576,7 @@ section {
 
 #work .card.hidden { display: none; }
 
-#work .tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    width: fit-content;
-    padding: 4px 10px;
-    border-radius: 6px;
-    letter-spacing: 0.03em;
-}
 
-#work .tag.cms { color: var(--tag-cms); background: rgba(217, 160, 91, 0.12); }
-#work .tag.mvc { color: var(--tag-mvc); background: rgba(111, 168, 220, 0.12); }
 
 #work .stack-row {
     display: flex;
