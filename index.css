@@ -1,7 +1,19 @@
 @font-face {
-  font-family: "FiraSans";
-  src: url("fonts/FiraSans-Medium.woff") format("woff2"),
-       url("fonts/FiraSans-Medium.woff") format("woff");
+  font-family: "Inter";
+  src: url("fonts/Inter-Regular.woff2") format("woff2"),
+       url("fonts/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("fonts/SpaceGrotesk-Bold.woff") format("woff2"),
+         url("fonts/SpaceGrotesk-Bold.woff2") format("woff");
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2"),
+         url("fonts/JetBrainsMono-Regular.woff") format("woff");
 }
 
 :root {
@@ -74,7 +86,7 @@
     }
 }
 
-h2 {
+h1, h2 {
     font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: clamp(32px, 4vw, 44px);
     font-weight: 600;
