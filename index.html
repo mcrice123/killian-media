@@ -291,38 +291,40 @@
 
             <!-- Modal Contact Form -->
             <div id="modal" class="mk-modal">
-                <div class="mk-modal-inner">
+                <div class="mk-modal-inner mk-text-left">
                     <div class="mk-modal__photo">
-                        <img src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&s=9980646201037d28700d826b1bd096c4&auto=format&fit=crop&w=700&q=80" alt="">
+                        <img src="img/mountains.jpg" alt="Rocky Mountains">
                     </div>
                     <div class="mk-modal__text">
                         <form>
                             <div class="mk-field">
                                 <label for="name" aria-required="true">Name</label>
-                                <input type="text" value="name" required>
+                                <input type="text" name="name" required>
                             </div>
                             <div class="mk-field">
                                 <label for="company">Company</label>
-                                <input type="text" value="company">
+                                <input type="text" name="company">
                             </div>
                             <div class="mk-field">
                                 <label for="email" aria-required="true">Email</label>
-                                <input type="email" value="Email" required>
+                                <input type="email" name="email" required>
                             </div>
                             <div class="mk-field">
                                 <label for="phone">Phone Number</label>
-                                <input type="number" value="phone">
+                                <input type="tel" name="phone">
                             </div>
                             <div class="mk-field">
                                 <label for="message" aria-required="true">How can I help you?</label>
-                                <textarea value="message"></textarea>
+                                <textarea name="message"></textarea>
                             </div>
                             <div class="mk-field">
                                 <input type="submit" class="mk-button-primary">
                             </div>
                         </form>
                     </div>
-                    <a class="mk-modal__close" href="#">X</a> 
+                    <a class="mk-modal__close" href="#">
+                        <div><img src="img/close.svg" alt="Close Modal"></div>
+                    </a> 
                 </div>           
             </div>
         </section>

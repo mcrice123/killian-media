@@ -36,6 +36,8 @@
     --sans-serif-font: "Inter", system-ui, -apple-system, sans-serif;
     --monospaced-font: "JetBrains Mono", monospace;
     --white: #FFFFFF;
+    /*--backdrop: rgba(255, 217, 148, .80);*/
+    --backdrop: rgba(127, 212, 200, .80);
 
   @media (prefers-color-scheme: dark) {
     --bg: #141A21;
@@ -51,6 +53,7 @@
     --border: #2A343E;
     --logo-filter: grayscale(1) invert(1) opacity(0.4);
     --logo-filter-hover: grayscale(0) invert(1) opacity(1);
+    --backdrop: rgba(0, 0, 0, .80);
   }
 }
 
@@ -79,6 +82,7 @@
     --border: #2A343E;
     --logo-filter: grayscale(1) invert(1) opacity(0.4);
     --logo-filter-hover: grayscale(0) invert(1) opacity(1);
+    --backdrop: rgba(0, 0, 0, .80);
     background: var(--bg);
     color: var(--text);
 }
@@ -143,7 +147,6 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     color: var(--text-dim);
     background: var(--panel);
     border: 1px solid var(--border);
-    cursor: pointer;
     transition: background 0.2s, color 0.2s;
 
     &.mk-large {
@@ -180,7 +183,8 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     }
 }
 
-.mk-icon-button {
+.mk-icon-button,
+.mk-modal__close {
     padding: 12px;
     border-radius: 999px;
     border: 1px solid var(--border);
@@ -637,17 +641,21 @@ section {
     height: 100vh;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, .80);
+    background-color: var(--backdrop);
     z-index: 2;
     visibility: hidden;
     opacity: 0;
     overflow: hidden;
     transition: .64s ease-in-out;
+	backdrop-filter: blur(5px);
+    border-radius: 0;
     &.show-modal{
         opacity: 1;
         visibility: visible;
     }
     .mk-modal-inner {
+        background: var(--panel);
+        border-radius: 16px;
         bottom: 0;
         right: 0;
         position: relative;
@@ -658,7 +666,7 @@ section {
         max-height: 600px;
         width: 60%;
         height: 80%;
-        background-color: #fff;
+        box-shadow: var(--shadow);
         transition: .64s ease-in-out;
     }
     .mk-modal__photo {
@@ -668,6 +676,8 @@ section {
         width: 40%;
         height: 100%;
         overflow: hidden;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
         img {
             width: auto;
             height: 100%;
@@ -679,7 +689,7 @@ section {
     justify-content: center;
     width: 60%;
     height: 100%;
-    padding: 4rem;
+    padding: 32px;
     h1 {
       font-size: 2rem;
       font-weight: 600;
@@ -703,29 +713,14 @@ section {
             transform: rotate(0);
         }
     }
-	/*&::backdrop {
-		animation: fadeIn 1s ease both;
-		background: var(--bg);
-		z-index: 3;
-		backdrop-filter: blur(20px);
-	}*/
 	.mk-modal__close {
-    position: absolute;
-    right: -1rem;
-    top: -1rem;
-    width: 3rem;
-    height: 3rem;
-    font-size: .875rem;
-    font-weight: 300;
-    border-radius: 100%;
-    background-color: #0A0A0A;
-    z-index: 4;
-    color: #fff;
-    line-height: 3rem;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-  }
+        position: absolute;
+        right: -1rem;
+        top: -1rem;
+        z-index: 4;
+        cursor: pointer;
+        text-decoration: none;
+    }
 }
 
 @keyframes fadeIn {
@@ -736,6 +731,47 @@ section {
 		opacity: 1;
 	}
 }
+
+/* -- Form Styles -- */
+form {
+    display: flex;
+    flex-direction: column;
+
+    .mk-field {
+        display: flex;
+        flex-direction: column;
+        font-family: var(--monospaced-font);
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"] {
+        display: inline-block;
+        font-family: var(--sans-serif-font);
+        font-size: 12px;
+        border-radius: 999px;
+        padding: 6px 14px;
+        color: var(--text-dim);
+        background: var(--panel);
+        border: 1px solid var(--border);
+    }
+
+    textarea {
+        display: inline-block;
+        font-family: var(--sans-serif-font);
+        font-size: 12px;
+        border-radius: 999px;
+        padding: 6px 14px;
+        color: var(--text-dim);
+        background: var(--panel);
+        border: 1px solid var(--border);
+    }
+}
+
 
 
 /* -- Footer Styles -- */
