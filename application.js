@@ -53,6 +53,27 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     })();
 
+    /*============== FORM SUCCESS/ERROR ============*/
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        const myForm = event.target;
+        const formData = new FormData(myForm);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            alert("Submission received!");
+            //myForm.classList.toggle("mk-display-none", true);
+        })
+        .catch(error => alert(error));
+    };
+
+    document.querySelector("form").addEventListener("submit", handleSubmit);
+
     /*=============== SHOW MODAL ===============*/
     const openBtn = document.querySelector(".mk__modal_btn");
     const modal = document.querySelector(".mk-modal");

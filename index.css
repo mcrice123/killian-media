@@ -36,7 +36,6 @@
     --sans-serif-font: "Inter", system-ui, -apple-system, sans-serif;
     --monospaced-font: "JetBrains Mono", monospace;
     --white: #FFFFFF;
-    /*--backdrop: rgba(255, 217, 148, .80);*/
     --backdrop: rgba(127, 212, 200, .80);
 
   @media (prefers-color-scheme: dark) {
@@ -88,14 +87,13 @@
 }
 
 /* -- Global Styles -- */
+.mk-display-none { display: none; }
+
 .mk-link, a {
     color: var(--accent);
     text-decoration: none;
     cursor: pointer;
-
-    &:hover {
-        color: var(--text-hover);
-    }
+    &:hover { color: var(--text-hover); }
 }
 
 h1, h2 {
@@ -120,7 +118,6 @@ h3 {
     color: var(--accent);
     margin: 0 0 12px;
     text-transform: uppercase;
-
     &::before { content: "// "; color: var(--text-dim); }
 }
 
@@ -144,16 +141,12 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     border-image: none;
     border-radius: 999px;
     padding: 6px 14px;
+    margin-top: 8px;
     color: var(--text-dim);
     background: var(--panel);
     border: 1px solid var(--border);
     transition: background 0.2s, color 0.2s;
-
-    &.mk-large {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
+    &.mk-large { font-size: 14px; padding: 8px 16px; }
     &:hover {
         border-color: var(--accent-dim);
         transform: translateY(-4px);
@@ -162,25 +155,18 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     }
     &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }   
 }
-
 .mk-button {
     color: var(--text-dim);
     background: var(--panel);
-
     &:hover { color: var(--text); }
 }
-
 .mk-button-primary {
     color: var(--white);
     background: var(--accent-dim);
     border-width: medium;
     border-style: none;
     border-color: var(--accent-dim);
-
-    &:hover {
-        color: var(--white);
-        background: var(--bg-hover);
-    }
+    &:hover { color: var(--white); background: var(--bg-hover); }
 }
 
 .mk-icon-button,
@@ -195,12 +181,9 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     display: inline-block;
     height: auto;
     width: auto;
-
-    & > div {
-        width: 24px;
-        height: 24px;
-    }
-
+    margin-top: 8px;
+    &:not(:last-child) { margin-right: 4px; }
+    & > div { width: 24px; height: 24px; }
     img {
         width: 100%;
         height: 100%;
@@ -208,19 +191,14 @@ address, dl, fieldset, figure, ol, p, pre, ul {
         transition: fill 0.2s ease;
         filter: var(--logo-filter);
     }
-
     &:hover {
         border-color: var(--accent-dim);
         transform: translateY(-4px);
         background: var(--panel-hover);
         box-shadow: var(--shadow), 0 12px 28px rgba(0,0,0,0.06);
-
         img { filter: var(--logo-filter-hover); }
     }
-    &:focus-visible { 
-        outline: 2px solid var(--accent); 
-        outline-offset: 2px; 
-    }   
+    &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }   
 }
 
 .mk-tag {
@@ -236,17 +214,14 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     color: var(--white);
     fill: var(--white);
     background-color: var(--tag-cms);
-
     &.cms { color: var(--tag-cms); background: rgba(217, 160, 91, 0.12); }
     &.mvc { color: var(--tag-mvc); background: rgba(111, 168, 220, 0.12); }
 }
 
 main { display: block; }
-
 section { 
     position: relative; 
     padding: 96px 24px 112px;
-
     & * { box-sizing: border-box; }
 }
 
@@ -258,22 +233,11 @@ section {
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-
-    @media screen and (min-width: 640px) {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    @media screen and (min-width: 960px) {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
+    @media screen and (min-width: 640px) { padding-left: 30px; padding-right: 30px; }
+    @media screen and (min-width: 960px) { padding-left: 40px; padding-right: 40px; }
 }
 
-.mk-inner {
-    max-width: 1080px;
-    margin: 0 auto;
-}
+.mk-inner { max-width: 1080px; margin: 0 auto; }
 
 .mk-header {
     display: flex;
@@ -319,22 +283,12 @@ section {
     display: flex;
     gap: 15px;
     align-items: stretch;
-
-    @media screen and (min-width: 960px) {
-        gap: 30px;
-    }
+    @media screen and (min-width: 960px) { gap: 30px; }
 }
-
-.mk-navbar-right {
-    text-align: right;
-}
-
+.mk-navbar-right { text-align: right; }
 .mk-navbar-left,
 .mk-navbar-center:only-child,
-.mk-navbar-right {
-    flex-wrap: wrap;
-}
-
+.mk-navbar-right { flex-wrap: wrap; }
 .mk-navbar-nav {
     display: flex;
     gap: 15px;
@@ -342,12 +296,8 @@ section {
     list-style: none;
     margin: 0;
     padding: 0;
-
-    @media screen and (min-width: 960px) {
-        gap: 30px;
-    }
+    @media screen and (min-width: 960px) { gap: 30px; }
 }
-
 .mk-navbar-item, 
 .mk-navbar-nav > li > a, 
 .mk-navbar-toggle {
@@ -356,23 +306,7 @@ section {
     font-size: 14px;
     color: var(--text-dim);
     transition: color 0.2s ease, color 0.2s ease;
-
-    &.mk-button {
-        background-color: var(--soft-secondary-color) !important;
-        color: var(--alt-2-color) !important;
-        border-radius: 14px;
-        padding: 8px 16px;
-        height: auto;
-    }
-
-    &:hover {
-        color: var(--text-hover) !important;
-
-        &.mk-button {
-            background-color: var(--secondary-color) !important;
-            color: var(--background-color) !important;
-        }
-    }
+    &:hover { color: var(--text-hover) !important; }
 }
 
 /* -- Hero Section Styles -- */
@@ -512,9 +446,9 @@ section {
     padding: 6px 14px;
     cursor: pointer;
     margin-top: 24px;
+    &:hover { color: var(--text); }
+    &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
-.theme-toggle:hover { color: var(--text); }
-.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 #work .filters {
     display: flex;
@@ -535,18 +469,9 @@ section {
     border-radius: 7px;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-}
-
-#work .filter-btn:hover { color: var(--text); }
-
-#work .filter-btn.active {
-    background: var(--accent-dim);
-    color: #fff;
-}
-
-#work .filter-btn:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
+    &:hover { color: var(--text); }
+    &.active { background: var(--accent-dim); color: #fff; }
+    &focus-visible { outline: 2px solid var(--accent); outline-offset: 2px;}
 }
 
 #work .grid {
@@ -566,21 +491,16 @@ section {
     box-shadow: var(--shadow);
     transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
+    &:hover,
+    &:focus-visible {
+        transform: translateY(-4px);
+        border-color: var(--accent-dim);
+        background: var(--panel-hover);
+        box-shadow: var(--shadow), 0 12px 28px rgba(0,0,0,0.06);
+    }
+    &:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    &.hidden { display: none; }
 }
-
-#work .card:hover,
-#work .card:focus-visible {
-    transform: translateY(-4px);
-    border-color: var(--accent-dim);
-    background: var(--panel-hover);
-    box-shadow: var(--shadow), 0 12px 28px rgba(0,0,0,0.06);
-}
-
-#work .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-#work .card.hidden { display: none; }
-
-
 
 #work .stack-row {
     display: flex;
@@ -619,8 +539,8 @@ section {
     border-style: dashed;
     opacity: 0.55;
     cursor: default;
+    &:hover { transform: none; background: var(--panel); border-color: var(--border); }
 }
-#work .placeholder-card:hover { transform: none; background: var(--panel); border-color: var(--border); }
 
 @media (prefers-reduced-motion: reduce) {
     #work .card, #work .card-footer svg { transition: none; }
@@ -678,10 +598,7 @@ section {
         overflow: hidden;
         border-top-left-radius: 16px;
         border-bottom-left-radius: 16px;
-        img {
-            width: auto;
-            height: 100%;
-        }
+        img { width: auto; height: 100%; }
     }
   .mk-modal__text {
     display: flex;
@@ -706,7 +623,6 @@ section {
     &:target { 
         visibility: visible; 
         opacity: 1;
-
         .popup-inner {
             bottom: 0;
             right: 0;
@@ -724,27 +640,23 @@ section {
 }
 
 @keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 
 /* -- Form Styles -- */
 form {
     display: flex;
     flex-direction: column;
-
+    .mk-error { margin-bottom: 12px; color: var(--tag-cms) !important; }
     .mk-field {
         display: flex;
         flex-direction: column;
         font-family: var(--monospaced-font);
         font-size: 12px;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
     }
-
+    label { margin-bottom: 4px; }
     input[type="text"],
     input[type="tel"],
     input[type="number"],
@@ -759,20 +671,18 @@ form {
         background: var(--panel);
         border: 1px solid var(--border);
     }
-
     textarea {
         display: inline-block;
         font-family: var(--sans-serif-font);
         font-size: 12px;
-        border-radius: 999px;
+        border-radius: 20px;
         padding: 6px 14px;
         color: var(--text-dim);
         background: var(--panel);
         border: 1px solid var(--border);
+        min-height: 60px;
     }
 }
-
-
 
 /* -- Footer Styles -- */
 #mk-footer {

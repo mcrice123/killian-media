@@ -296,7 +296,13 @@
                         <img src="img/mountains.jpg" alt="Rocky Mountains">
                     </div>
                     <div class="mk-modal__text">
-                        <form>
+                        <form name="contact" method="POST" action="/" data-netlify="true" 
+                            netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+                            <p class="mk-display-none">
+                                <label>
+                                    Don’t fill this out if you’re human: <input name="bot-field" type="text" />
+                                </label>
+                            </p>
                             <div class="mk-field">
                                 <label for="name" aria-required="true">Name</label>
                                 <input type="text" name="name" required>
@@ -316,6 +322,9 @@
                             <div class="mk-field">
                                 <label for="message" aria-required="true">How can I help you?</label>
                                 <textarea name="message"></textarea>
+                            </div>
+                            <div clcass="mk-field">
+                                <div data-netlify-recaptcha="true"></div>
                             </div>
                             <div class="mk-field">
                                 <input type="submit" class="mk-button-primary">
