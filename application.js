@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-    /*=========== THEME TOGGLE AND FILTER BUTTONS ==============*/
+    /*=========== THEME TOGGLE ==============*/
     (function() {
       const section = document.getElementById('mk-page');
       const toggle = document.getElementById('theme-toggle');
@@ -53,22 +53,54 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
 
-      const buttons = section.querySelectorAll('.filter-btn');
-      const cards = section.querySelectorAll('.card');
+      /*============ WORK FILTER BUTTONS ==============*/
 
-      buttons.forEach((btn) => {
+      const work_buttons = section.querySelectorAll('.filter-btn.work');
+      const work_cards = section.querySelectorAll('.card.work');
+
+      work_buttons.forEach((btn) => {
         btn.addEventListener('click', () => {
-          buttons.forEach((b) => b.classList.remove('active'));
+          work_buttons.forEach((b) => b.classList.remove('active'));
           btn.classList.add('active');
           const filter = btn.dataset.filter;
 
-          cards.forEach((card) => {
+          work_cards.forEach((card) => {
+            const match = filter === 'all' || card.dataset.category === filter;
+            card.classList.toggle('hidden', !match);
+          });
+        });
+      });
+
+      /*============ WORK FILTER BUTTONS ==============*/
+
+      const service_buttons = section.querySelectorAll('.filter-btn.service');
+      const service_cards = section.querySelectorAll('.card.service');
+
+      service_buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          service_buttons.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+
+          service_cards.forEach((card) => {
             const match = filter === 'all' || card.dataset.category === filter;
             card.classList.toggle('hidden', !match);
           });
         });
       });
     })();
+
+    /*============ FILL MESSAGE FIELD ON CARD CLICK =============*/
+    const card_links = section.querySelectorAll('a.card.service');
+
+    card_links.forEach((card_link) => {
+      const title = card_link.getElementsByTagName('h3')[0];
+      console.log(title.innerText);
+      const message_text = "I am interested in your " + title.innerText + " service. "
+      card_link.addEventListener('click', () => {
+        document.getElementById("message").value = message_text;
+      });
+    });
 
     /*============== FORM SUCCESS/ERROR ============*/
     const handleSubmit = event => {
