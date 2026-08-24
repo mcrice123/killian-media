@@ -63,6 +63,7 @@
     width: 100%;
     max-width: 100%;
     background: var(--bg);
+    margin: 0;
     color: var(--text);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     transition: background 0.3s ease, color 0.3s ease;
@@ -284,7 +285,8 @@ section {
     display: flex;
     gap: 15px;
     align-items: stretch;
-    @media screen and (min-width: 960px) { gap: 30px; }
+    height: 60px;
+    @media screen and (min-width: 960px) { gap: 30px; height: 40px; }
 }
 .mk-navbar-right { text-align: right; }
 .mk-navbar-left,
@@ -307,14 +309,99 @@ section {
     font-size: 14px;
     color: var(--text-dim);
     transition: color 0.2s ease, color 0.2s ease;
-    &:hover { color: var(--text-hover) !important; }
+    height: 100%;
+    padding: 20px 8px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    text-align: center;
+    &:hover { color: var(--text-hover) !important; background-color: var(--border); }
+}
+.mk-navbar-nav > li { display: flex; }
+.mk-navbar-center .mk-navbar-nav {
+    /*============ Mobile menu ================*/
+    @media screen and (max-width: 768px) { 
+        display: none; 
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        width: 100%;
+        height: 60px;
+        background-color: var(--accent);
+        & > li {
+            & > a {
+                color: var(--white);
+                padding: 0 24px;
+                letter-spacing: 0;
+                height: 40px;
+                line-height: 40px;
+                margin-top: 0;
+                opacity: 1;
+                transform: scaleY(1);
+                transition: 0.5s, opacity 0.1s;
+                &:hover { background-color: rgba(0, 0, 0, .30); }
+            }
+        }
+        &.mk-menu-open {
+            display: inline-flex;
+        }
+    }
+}
+/*============ Logo =============*/
+.mk-navbar-brand {
+    width: 70px;
+    img { 
+        box-sizing: border-box; 
+        padding: 8px; 
+        height: 100%; 
+        width: auto; 
+    }
+    &:hover { img { background-color: var(--border); } }
+}
+.mk-mode { padding-top: 20px; }
+#theme-toggle { margin: 16px 8px; }
+
+#hamburger {
+    overflow: hidden;
+    width: 60px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+
+  &:before {
+    transform: translateY(-50%) rotate(45deg) scale(0);
+  }
+
+  &:after {
+    transform: translateY(50%) rotate(-45deg) scale(0);
+  }
+    &:hover { background-color: var(--border); }
+    .hamburger {
+        width: 100%;
+        height: 100%;
+        transition: translate 1s, rotate 1s;
+        cursor: pointer;
+        .line { transition: 1s; stroke-dasharray: 60 31 60 300; }
+    }
+    &[aria-expanded="true"] {
+        .hamburger {
+            translate: 4px -4px;
+            rotate: 0.125turn;
+            .line { stroke-dasharray: 60 105 60 300; stroke-dashoffset: -90; }
+        }
+    }
+    @media screen and (min-width: 769px) { display: none; }
 }
 
 /* -- Hero Section Styles -- */
 #home {
-    background-image: url('img/cloud.svg'); 
-    background-position: calc(100% + 110px) 10px; 
-    background-size: 70%;
+    background-image: url('img/casual-dev-at-night.png'); 
+    background-size: 110%;
+    background-position: 70% 50%;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: row;
@@ -492,9 +579,7 @@ section {
     box-shadow: var(--shadow);
     transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
-    img {
-        width: 200px;
-    }
+    img { width: 200px; margin-right: auto; margin-left: auto; }
     &:hover,
     &:focus-visible {
         transform: translateY(-4px);

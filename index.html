@@ -25,12 +25,19 @@
     </head>
 <body id="mk-page">
     <!-- Navigation-->
-    <nav class="mk-navbar">
+    <nav class="mk-navbar" role="navigation">
         <div class="mk-navbar-left">
-            <a class="mk-navbar-brand" href="#home">Killian Media LLC</a>
+            <a class="mk-navbar-brand" href="#home" aria-label="Killian Media LLC">
+                <img src="img/icons/km-logo.svg" alt="KM logo">
+            </a>
         </div>
         <div class="mk-navbar-center">
-            <ul class="mk-navbar-nav">
+            <button id="hamburger" class="button-three" aria-controls="primary-navigation" aria-expanded="false">
+                <svg class="hamburger" stroke="var(--accent)" fill="none" viewBox="-10 -10 120 120" width="60">
+                    <path class="line" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"></path>
+                </svg>
+            </button>
+            <ul id="mk-menu" class="mk-navbar-nav">
                 <li><a href="#about">About</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#services">Services</a></li>
@@ -40,7 +47,7 @@
         <div class="mk-navbar-right">
             <ul class="mk-navbar-nav">
                 <li>
-                    Mode
+                    <span class="mk-mode">Mode</span>
                     <button class="mk-button" id="theme-toggle" aria-pressed="false">
                         <span id="theme-toggle-label">☀ light</span>
                     </button>
@@ -212,26 +219,26 @@
         <!-- Services section -->
          <section id="services" class="mk-container mk-text-center">
             <h1 class="mk-section-heading">Services</h1>
-            <h2>Example Quotes</h2>
+            <h3>Example Quotes</h3>
             <p>*Prices not guaranteed prior to consultation. <a href="#modal">Book yours today!</a></p>
 
             <div class="grid">
                 <article class="card" tabindex="0">
-                    <span class="mk-tag cms">$3000</span>
+                    <span class="mk-tag cms">$3,000</span>
                     <h3>Single-Page Website</h3>
                     <p>No CMS, Portfolio design and development</p>
                     <img src="img/quote-base.png" alt="base quote">
                 </article>
 
                 <article class="card" tabindex="0">
-                    <span class="mk-tag cms">$5000</span>
+                    <span class="mk-tag cms">$5,000</span>
                     <h3>CMS Website</h3>
                     <p>Built with WordPress, five pages included</p>
                     <img src="img/quote-cms.png" alt="cms quote">
                 </article>
 
                 <article class="card" tabindex="0">
-                    <span class="mk-tag cms">$8000</span>
+                    <span class="mk-tag cms">$8,000</span>
                     <h3>CMS Blog Website</h3>
                     <p>Built with WordPress, five pages and blog included</p>
                     <img src="img/quote-cms-blog.png" alt="cms blog quote">
@@ -245,7 +252,6 @@
                 </article>
             </div>
 
-            <h2>Subscription Plans</h2>
             <h3>Monthly Maintenance</h3>
             <p>Includes domain management, security updates and minor content changes.</p>
             <table class="mk-flex mk-flex-column mk-flex-middle mk-text-left">

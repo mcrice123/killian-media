@@ -1,7 +1,7 @@
 // When DOM is loaded, set the copyright year and add event listeners for the navbar burger
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Check for system dark mode preference and set the initial theme accordingly
+    /*============ system dark mode preference =============*/
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
     const section = document.getElementById('mk-page');
     const toggle = document.getElementById('theme-toggle');
@@ -17,7 +17,24 @@ document.addEventListener("DOMContentLoaded", function() {
         toggle.setAttribute('aria-pressed', 'false');
     }
 
-    // Add event listeners for theme toggle and filter buttons
+    /*=============== HAMBURGER MENU ==================*/ 
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("mk-menu");
+    hamburger.addEventListener("click", () => {
+    const currentState = hamburger.getAttribute("data-state");
+
+    if (!currentState || currentState === "closed") {
+      hamburger.setAttribute("data-state", "opened");
+      hamburger.setAttribute("aria-expanded", "true");
+      menu.classList.toggle("mk-menu-open", true);
+    } else {
+      hamburger.setAttribute("data-state", "closed");
+      hamburger.setAttribute("aria-expanded", "false");
+      menu.classList.toggle("mk-menu-open", false);
+    }
+  });
+
+    /*=========== THEME TOGGLE AND FILTER BUTTONS ==============*/
     (function() {
       const section = document.getElementById('mk-page');
       const toggle = document.getElementById('theme-toggle');
