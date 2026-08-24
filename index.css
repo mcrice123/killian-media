@@ -29,6 +29,7 @@
     --tag-cms: #A8641F;
     --tag-mvc: #2E5C8A;
     --border: #E3DFD8;
+    --error: #fc657e;
     --shadow: 0 1px 2px rgba(30,35,40,0.04), 0 8px 20px rgba(30,35,40,0.05);
     --logo-filter: grayscale(1) opacity(0.4);
     --logo-filter-hover: grayscale(0) opacity(1);
@@ -474,13 +475,13 @@ section {
     &focus-visible { outline: 2px solid var(--accent); outline-offset: 2px;}
 }
 
-#work .grid {
+.grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
-#work .card {
+.card {
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 16px;
@@ -491,6 +492,9 @@ section {
     box-shadow: var(--shadow);
     transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
+    img {
+        width: 200px;
+    }
     &:hover,
     &:focus-visible {
         transform: translateY(-4px);
@@ -502,14 +506,14 @@ section {
     &.hidden { display: none; }
 }
 
-#work .stack-row {
+.stack-row {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 4px;
 }
 
-#work .stack-pill {
+.stack-pill {
     font-size: 12px;
     color: var(--text-dim);
     border: 1px solid var(--border);
@@ -517,7 +521,7 @@ section {
     padding: 3px 10px;
 }
 
-#work .card-footer {
+.card-footer {
     margin-top: auto;
     display: flex;
     align-items: center;
@@ -527,15 +531,15 @@ section {
     color: var(--accent);
 }
 
-#work .card:hover .card-footer,
-#work .card:focus-visible .card-footer { color: #7FD4C8; }
+.card:hover .card-footer,
+.card:focus-visible .card-footer { color: #7FD4C8; }
 
-#work .card-footer svg {
+.card-footer svg {
     transition: transform 0.2s ease;
 }
-#work .card:hover .card-footer svg { transform: translate(2px, -2px); }
+.card:hover .card-footer svg { transform: translate(2px, -2px); }
 
-#work .placeholder-card {
+.placeholder-card {
     border-style: dashed;
     opacity: 0.55;
     cursor: default;
@@ -543,12 +547,12 @@ section {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    #work .card, #work .card-footer svg { transition: none; }
+    .card, #work .card-footer svg { transition: none; }
 }
 
 @media (max-width: 720px) {
-    #work .grid { grid-template-columns: 1fr; }
-    #work .work-header { flex-direction: column; align-items: flex-start; }
+    .grid { grid-template-columns: 1fr; }
+    .work-header { flex-direction: column; align-items: flex-start; }
 }
 
 /* -- Modal Styles -- */ 

@@ -34,7 +34,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#modal">Contact</a></li>
             </ul>
         </div>
         <div class="mk-navbar-right">
@@ -58,7 +58,7 @@
                 <p>
                     I build responsive, user-friendly websites and applications using the latest technologies.
                 </p> 
-                <a href="#contact" class="mk-button mk-large">Available for <span>Hire</span> / <span>Freelance</span></a>
+                <a href="#modal" class="mk-button mk-large">Available for <span>Hire</span> / <span>Freelance</span></a>
             </div>
 
             <img src="img/avatar_no_bg.png" alt="Maria Killian" class="mk-width-1-2">
@@ -88,47 +88,47 @@
             <div class="marquee-mask">
                 <div class="marquee-track" id="tm-track">
                     <div class="logo-item">
-                        <img src="img/wp-logo.svg" alt="WordPress" />
+                        <img src="img/icons/wp-logo.svg" alt="WordPress" />
                     </div>
                     <div class="logo-item">
-                        <img src="img/ruby-on-rails.svg" alt="Ruby on Rails" />
+                        <img src="img/icons/ruby-on-rails.svg" alt="Ruby on Rails" />
                     </div>
                     <div class="logo-item">
-                        <img src="img/laravel.svg" alt="Laravel" />
+                        <img src="img/icons/laravel.svg" alt="Laravel" />
                     </div>
                     <div class="logo-item">
-                        <img src="img/sass.svg" alt="Sass" />
+                        <img src="img/icons/sass.svg" alt="Sass" />
                     </div>
                     <div class="logo-item">
-                        <img src="img/react-logo.svg" alt="React" />
+                        <img src="img/icons/react-logo.svg" alt="React" />
                     </div>
                     <div class="logo-item">
-                        <img src="img/adobe.svg" alt="Adobe Creative Suite" />
+                        <img src="img/icons/adobe.svg" alt="Adobe Creative Suite" />
                     </div>
                     <div class="logo-item">
-                        <img src="img/git.svg" alt="Git" />
+                        <img src="img/icons/git.svg" alt="Git" />
                     </div>
                     <!-- duplicated set for seamless loop -->
                     <div class="logo-item" aria-hidden="true">
-                        <img src="img/wp-logo.svg" alt="WordPress" />
+                        <img src="img/icons/wp-logo.svg" alt="WordPress" />
                     </div>
                     <div class="logo-item" aria-hidden="true">
-                        <img src="img/ruby-on-rails.svg" alt="Ruby on Rails" />
+                        <img src="img/icons/ruby-on-rails.svg" alt="Ruby on Rails" />
                     </div>
                     <div class="logo-item" aria-hidden="true">
-                        <img src="img/laravel.svg" alt="Laravel" />
+                        <img src="img/icons/laravel.svg" alt="Laravel" />
                     </div>
                     <div class="logo-item" aria-hidden="true">
-                        <img src="img/sass.svg" alt="Sass" />
+                        <img src="img/icons/sass.svg" alt="Sass" />
                     </div>
                     <div class="logo-item" aria-hidden="true">
-                        <img src="img/react-logo.svg" alt="React" />
+                        <img src="img/icons/react-logo.svg" alt="React" />
                     </div>
                     <div class="logo-item" aria-hidden="true">
-                        <img src="img/adobe.svg" alt="Adobe Creative Suite" /> 
+                        <img src="img/icons/adobe.svg" alt="Adobe Creative Suite" /> 
                     </div>
                     <div class="logo-item" aria-hidden="true">
-                        <img src="img/git.svg" alt="Git" />
+                        <img src="img/icons/git.svg" alt="Git" />
                     </div>
                 </div>
             </div>
@@ -213,36 +213,38 @@
          <section id="services" class="mk-container mk-text-center">
             <h1 class="mk-section-heading">Services</h1>
             <h2>Example Quotes</h2>
-            <table class="mk-flex mk-flex-column mk-flex-middle mk-text-left">
-                <thead>
-                    <tr>
-                        <th>Description</th>
-                        <th>Quote</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Single-Page Website</td>
-                        <td>$2,500</td>
-                    </tr>
-                    <tr>
-                        <td>5-Page Website</td>
-                        <td>$5,000</td>
-                    </tr>
-                    <tr>
-                        <td>5-Page Website + Blog</td>
-                        <td>$10,000</td>
-                    </tr>
-                    <tr>
-                        <td>Internal Dashboard (Basic)</td>
-                        <td>$30,000</td>
-                    </tr>
-                    <tr>
-                        <td>Internal Dashboard (Super)</td>
-                        <td>Contact me for details</td>
-                    </tr>
-                </tbody>
-            </table>
+            <p>*Prices not guaranteed prior to consultation. <a href="#modal">Book yours today!</a></p>
+
+            <div class="grid">
+                <article class="card" tabindex="0">
+                    <span class="mk-tag cms">$3000</span>
+                    <h3>Single-Page Website</h3>
+                    <p>No CMS, Portfolio design and development</p>
+                    <img src="img/quote-base.png" alt="base quote">
+                </article>
+
+                <article class="card" tabindex="0">
+                    <span class="mk-tag cms">$5000</span>
+                    <h3>CMS Website</h3>
+                    <p>Built with WordPress, five pages included</p>
+                    <img src="img/quote-cms.png" alt="cms quote">
+                </article>
+
+                <article class="card" tabindex="0">
+                    <span class="mk-tag cms">$8000</span>
+                    <h3>CMS Blog Website</h3>
+                    <p>Built with WordPress, five pages and blog included</p>
+                    <img src="img/quote-cms-blog.png" alt="cms blog quote">
+                </article>
+
+                <article class="card" tabindex="0">
+                    <span class="mk-tag cms">$10,000</span>
+                    <h3>Internal Dashboard</h3>
+                    <p>MVC design from scratch following top security standards</p>
+                    <img src="img/quote-mvc.png" alt="mvc quote">
+                </article>
+            </div>
+
             <h2>Subscription Plans</h2>
             <h3>Monthly Maintenance</h3>
             <p>Includes domain management, security updates and minor content changes.</p>
@@ -279,12 +281,12 @@
             <div class="mk-flex mk-flex-center">
                 <a href="https://www.linkedin.com/in/maria-c-killian" target="_blank" rel="noopener noreferrer" class="mk-icon-button" aria-label="LinkedIn">
                     <div>
-                        <img src="img/linkedin.svg" alt="LinkedIn">
+                        <img src="img/icons/linkedin.svg" alt="LinkedIn">
                     </div>
                 </a>
                 <a href="https://github.com/mcrice123" target="_blank" rel="noopener noreferrer" class="mk-icon-button" aria-label="GitHub">
                     <div>
-                        <img src="img/github.svg" alt="GitHub">
+                        <img src="img/icons/github.svg" alt="GitHub">
                     </div>
                 </a>
             </div>
@@ -293,7 +295,7 @@
             <div id="modal" class="mk-modal">
                 <div class="mk-modal-inner mk-text-left">
                     <div class="mk-modal__photo">
-                        <img src="img/mountains.jpg" alt="Rocky Mountains">
+                        <img src="img/casual-dev-at-night.png" alt="Laptop artwork">
                     </div>
                     <div class="mk-modal__text">
                         <form name="contact" method="POST" action="/" data-netlify="true" 
@@ -330,9 +332,24 @@
                                 <input type="submit" class="mk-button-primary">
                             </div>
                         </form>
+
+                        <!-- Social Links -->
+                        <div class="mk-flex mk-flex-center">
+                            <a href="https://www.linkedin.com/in/maria-c-killian" target="_blank" rel="noopener noreferrer" class="mk-icon-button" aria-label="LinkedIn">
+                                <div>
+                                    <img src="img/icons/linkedin.svg" alt="LinkedIn">
+                                </div>
+                            </a>
+                            <a href="https://github.com/mcrice123" target="_blank" rel="noopener noreferrer" class="mk-icon-button" aria-label="GitHub">
+                                <div>
+                                    <img src="img/icons/github.svg" alt="GitHub">
+                                </div>
+                            </a>
+                        </div>
                     </div>
+                    
                     <a class="mk-modal__close" href="#">
-                        <div><img src="img/close.svg" alt="Close Modal"></div>
+                        <div><img src="img/icons/close.svg" alt="Close Modal"></div>
                     </a> 
                 </div>           
             </div>
