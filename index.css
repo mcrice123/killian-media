@@ -32,6 +32,8 @@
     --accent-3: #2E5C8A;
     --accent-4: #A8641F;
     --accent-dim: #2F8F80;
+    --mobile-bg: #2F8f80;
+    --mobile-hover: rgba(0, 0, 0, .30);
     --text-hover: #7FD4C8;
     --bg-hover: #2E5C8A;
     --tag-cms: #A8641F;
@@ -97,9 +99,11 @@
     --text-dim: #94A3AD;
     --accent: #5FBDB0;
     --accent-dim: #3E7A72;
+    --mobile-bg: #000000;
+    --mobile-hover: rgba(255,255,255, .10);
     --tag-cms: #D9A05B;
     --tag-mvc: #6FA8DC;
-    --border: #2A343E;
+    --border: #43576b;
     --shadow: 0 1px 10px rgba(0, 0, 0, 0.65);
     --logo-filter: grayscale(1) invert(1) opacity(0.4);
     --logo-filter-hover: grayscale(0) invert(1) opacity(1);
@@ -325,16 +329,15 @@ section {
     height: 60px;
     z-index: 4;
     &.scroll-bg { background-color: var(--bg); box-shadow: var(--shadow); }
-    @media screen and (min-width: 960px) { height: 40px; }
 }
 .mk-navbar-left,
 .mk-navbar-center,
 .mk-navbar-right {
     display: flex;
-    gap: 15px;
+    gap: 30px;
     align-items: stretch;
     height: 60px;
-    @media screen and (min-width: 960px) { gap: 30px; height: 40px; }
+    @media screen and (max-width: 960px) { gap: 15px; }
 }
 .mk-navbar-left,
 .mk-navbar-right { width: 140px; }
@@ -381,7 +384,7 @@ section {
         right: 0;
         z-index: 2;
         width: 100%;
-        background-color: var(--accent);
+        background-color: var(--mobile-bg);
         & > li {
             & > a {
                 color: var(--white);
@@ -392,7 +395,7 @@ section {
                 opacity: 1;
                 transform: scaleY(1);
                 transition: 0.5s, opacity 0.1s;
-                &:hover { background-color: rgba(0, 0, 0, .30); }
+                &:hover { background-color: var(--mobile-hover); }
             }
         }
         & > li, & > li & a { height: 40px; }
