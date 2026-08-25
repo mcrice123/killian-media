@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .then(() => {
             alert("Submission received!");
-            //myForm.classList.toggle("mk-display-none", true);
+            myForm.reset();
         })
         .catch(error => alert(error));
     };
