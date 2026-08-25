@@ -122,8 +122,15 @@ document.addEventListener("DOMContentLoaded", function() {
             body: new URLSearchParams(formData).toString()
         })
         .then(() => {
-            alert("Submission received!");
-            myForm.reset();
+            if (!response.ok) {
+              return response.text().then(text => {
+                  throw new Error(`Submission failed (${response.status}): ${text}`);
+              });
+            }
+            else {
+              alert("Submission received!");
+              myForm.reset();
+            }
         })
         .catch(error => alert(error));
     };

@@ -397,6 +397,7 @@
                 <div class="mk-modal__text">
                     <form name="contact" method="POST" action="/" data-netlify="true" 
                         netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+                        <input type="hidden" name="form-name" value="contact">
                         <p class="mk-display-none">
                             <label>
                                 Don’t fill this out if you’re human: <input name="bot-field" type="text" />
@@ -422,8 +423,8 @@
                             <label for="message" aria-required="true">How can I help you?</label>
                             <textarea id="message" name="message"></textarea>
                         </div>
-                        <div clcass="mk-field">
-                            <label class="sr-only" for="g-recaptcha-response">Google Recaptcha</label>
+                        <div class="mk-field">
+                            <span class="sr-only">Verification</span>
                             <div data-netlify-recaptcha="true"></div>
                         </div>
                         <div class="mk-field">
