@@ -816,6 +816,7 @@ form {
         margin-bottom: 12px;
     }
     label { margin-bottom: 4px; }
+    label[aria-required="true"]::after { content: "☀"; color: var(--error); margin-left: 4px; }
     input[type="text"],
     input[type="tel"],
     input[type="number"],
