@@ -45,6 +45,7 @@
     --sans-serif-font: "Inter", system-ui, -apple-system, sans-serif;
     --monospaced-font: "JetBrains Mono", monospace;
     --white: #FFFFFF;
+    --profile-bg: rgba(127, 212, 200, .80);
     --backdrop: rgba(127, 212, 200, .80);
     --illustration-bg: #6bada8;
     --shape-opacity: 0.28;
@@ -230,7 +231,7 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     letter-spacing: 0.03em;
     color: var(--white);
     fill: var(--white);
-    background-color: var(--tag-cms);
+    background-color: var(--tag-mvc);
     &.cms, &.quote { color: var(--tag-cms); background: rgba(217, 160, 91, 0.12); }
     &.mvc, &.sub { color: var(--tag-mvc); background: rgba(111, 168, 220, 0.12); }
 }
@@ -254,28 +255,27 @@ section {
 }
 .mk-inner { max-width: 1080px; margin: 0 auto; }
 .mk-alt-section { background-color: var(--alt-bg); }
-.mk-illustration-row { 
+.mk-row-container { 
     padding: 0;
     position: relative;
     overflow: hidden;
-    & > img { 
-        object-fit: contain;
-        object-position: left center;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        z-index: -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .mk-row-img { 
+        width: 40%; display: inline; 
+        img { width: 100%;}
     }
-    .mk-illustration-text {
-        display: flex;
+    .mk-row-text {
+        display: inline-flex;
         flex-direction: column;
         padding: 20px;
-        width: 60%;
-        margin-left: 40%;
+        width: 50%;
+    }
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
     }
 }
 .mk-header {
@@ -469,13 +469,23 @@ section {
       margin: 0 auto 36px;
     }
 }
-
+/*================ About Styles ==================*/
+.mk-profile-img-contain {
+    position: relative;
+    img { 
+        border-radius: 999px; 
+        background-color: var(--profile-bg); 
+        border: 4px solid var(--accent);
+        width: 100%;
+    }
+}
 #home-location {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 8px;
+    right: 50%;
     z-index: 2;
-
+    transform: translateX(50%);
+    white-space: nowrap;
     svg {
         height: 18px;
         margin-top: -4px;
@@ -483,12 +493,6 @@ section {
         fill: currentColor;
     }
 }
-
-/*================ About Styles ==================*/
-.mk-profile-img-contain {
-
-}
-
 /*=============== Tech Marquee Styles ==================*/
 #tech-marquee {
     position: relative;
@@ -671,7 +675,7 @@ section {
     bottom: 0;
     right: 0;
     background-color: var(--backdrop);
-    z-index: 2;
+    z-index: 10;
     visibility: hidden;
     opacity: 0;
     overflow: hidden;
@@ -789,11 +793,24 @@ form {
         min-height: 60px;
     }
 }
-
-/* -- Footer Styles -- */
+/*========= Cool Background section =============*/
+.mk-cool-bg {
+    color: #E7EAEC;
+    background-image: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url("img/casual-dev-at-night.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    h1, p { color: #E7EAEC; text-shadow: 2px 4px 10px #0a0a0a; }
+}
+/*========= Footer Styles ==========*/
 #mk-footer {
     display: flex;
     text-align: center;
     flex-direction: column;
     justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
 }
