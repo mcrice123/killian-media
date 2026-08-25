@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
         })
-        .then(() => {
+        .then((response) => {
             if (!response.ok) {
               return response.text().then(text => {
                   throw new Error(`Submission failed (${response.status}): ${text}`);
