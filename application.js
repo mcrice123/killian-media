@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     card_links.forEach((card_link) => {
       const title = card_link.getElementsByTagName('h3')[0];
-      console.log(title.innerText);
       const message_text = "I am interested in your " + title.innerText + " service. "
       card_link.addEventListener('click', () => {
         document.getElementById("message").value = message_text;

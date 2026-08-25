@@ -58,32 +58,59 @@
 
     <main>
         <!-- Home section -->
-        <section id="home" class="mk-text-center">
-            <div class="mk-flex mk-flex-column width-1-2">
-                <p class="mk-eyebrow">Frontend Web Developer</h4>
-                <h1>Building <span>Digital</span> Experiences</h1>
-                <p>
-                    I build responsive, user-friendly websites and applications using the latest technologies.
-                </p> 
-                <a href="#modal" class="mk-button mk-large">Available for <span>Hire</span> / <span>Freelance</span></a>
-            </div>
-
-            <img src="img/avatar_no_bg.png" alt="Maria Killian" class="mk-width-1-2">
-            <p id="home-location" class="mk-tag">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370.85 512">
-                    <path d="M185.43,0C83.18,0,0,83.18,0,185.43c0,126.89,165.94,313.17,173,321.04,6.64,7.39,18.22,7.38,24.85,0,7.07-7.87,173-194.15,173-321.04,0-102.24-83.18-185.43-185.43-185.43ZM185.43,278.72c-51.44,0-93.29-41.85-93.29-93.29s41.85-93.29,93.29-93.29,93.29,41.85,93.29,93.29-41.85,93.29-93.29,93.29Z"/>
+        <section id="home" class="hero">
+            <div class="hero-bg" aria-hidden="true">
+                <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <!-- large outlined circle, upper right -->
+                <circle cx="1180" cy="120" r="240" fill="none" stroke="var(--accent)" stroke-width="1.5" />
+                <!-- filled soft blob-ish rotated square -->
+                <rect x="960" y="380" width="260" height="260" rx="36" fill="var(--accent-3)" opacity="0.35" transform="rotate(18 1090 510)" />
+                <!-- outlined triangle, left side -->
+                <polygon points="120,620 320,620 220,430" fill="none" stroke="var(--accent-4)" stroke-width="1.5" />
+                <!-- small filled circle cluster -->
+                <circle cx="220" cy="160" r="10" fill="var(--accent-2)" opacity="0.6" />
+                <circle cx="270" cy="200" r="6" fill="var(--accent-4)" opacity="0.6" />
+                <circle cx="180" cy="220" r="4" fill="var(--accent-3)" opacity="0.6" />
+                <!-- thin diagonal lines, right side -->
+                <line x1="1300" y1="500" x2="1440" y2="640" stroke="var(--accent-2)" stroke-width="1.5" />
+                <line x1="1340" y1="460" x2="1440" y2="560" stroke="var(--accent-2)" stroke-width="1.5" />
+                <!-- outlined hexagon, bottom left -->
+                <polygon points="70,720 130,684 190,720 190,792 130,828 70,792" fill="none" stroke="var(--accent-3)" stroke-width="1.5" />
+                <!-- large faint rotated square outline, center-left background -->
+                <rect x="30" y="40" width="380" height="380" fill="none" stroke="var(--border)" stroke-width="1" transform="rotate(8 220 230)" />
+                <!-- dotted arc top-left -->
+                <path d="M 40 380 A 300 300 0 0 1 340 80" fill="none" stroke="var(--accent-4)" stroke-width="1.5" stroke-dasharray="2 10" stroke-linecap="round" />
                 </svg>
-                Based in <span>Denver</span>
-            </p>
+            </div>
+            <div class="hero-inner">
+                <p class="mk-eyebrow">Frontend Developer</p>
+                <h1>Building sites that<br><span class="accent">still work</span><br>years later</h1>
+                <p class="sub">I design and build responsive websites across CMS and MVC stacks — from ExpressionEngine to WordPress to React — with an eye for detail that holds up over time.</p>
+                <div class="cta-row">
+                    <a href="#work" class="mk-button mk-large">View my work</a>
+                    <a href="#modal" class="mk-button-primary mk-large">Get in touch</a>
+                </div>
+            </div>
         </section>
 
         <!-- About section -->
-        <section id="about" class="mk-text-center">
+        <section id="about" class="mk-alt-section mk-text-center">
             <div class="mk-inner">
+                <div class="hero-profile-img-contain">
+                    <img src="img/avatar_no_bg.png" alt="Maria Killian" class="mk-width-1-2">
+                    <p id="home-location" class="mk-tag">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370.85 512">
+                            <path d="M185.43,0C83.18,0,0,83.18,0,185.43c0,126.89,165.94,313.17,173,321.04,6.64,7.39,18.22,7.38,24.85,0,7.07-7.87,173-194.15,173-321.04,0-102.24-83.18-185.43-185.43-185.43ZM185.43,278.72c-51.44,0-93.29-41.85-93.29-93.29s41.85-93.29,93.29-93.29,93.29,41.85,93.29,93.29-41.85,93.29-93.29,93.29Z"/>
+                        </svg>
+                        Based in <span>Denver</span>
+                    </p>
+                </div>
+            </div>
             <h1><span id="about_intro">Hi, I'm </span><span id="about_maria">Maria</span> <span id="about_killian">Killian</span></h1>
                 <p>
                     I am a frontend web developer with a passion for creating responsive, user-friendly websites and applications.
                 </p>
+                <a href="#modal" class="mk-button mk-large">Available for <span>Hire</span> / <span>Freelance</span></a>
             </div>
         </section>
 
