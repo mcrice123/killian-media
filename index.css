@@ -842,6 +842,15 @@ form {
         min-height: 60px;
     }
 }
+/*=========== Accessible Recaptcha for Screen Readers =======*/
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
 /*========= Cool Background section =============*/
 .mk-cool-bg {
     color: #E7EAEC;
