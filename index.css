@@ -84,6 +84,7 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     transition: background 0.3s ease, color 0.3s ease;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    position: relative;
 }
 
 #mk-page[data-theme="dark"] {
@@ -310,6 +311,14 @@ section {
     position: relative;
     transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 4;
+    &.scroll-bg {
+        background-color: var(--bg);
+    }
 }
 .mk-navbar-left,
 .mk-navbar-center,

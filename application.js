@@ -21,18 +21,26 @@ document.addEventListener("DOMContentLoaded", function() {
     const hamburger = document.getElementById("hamburger");
     const menu = document.getElementById("mk-menu");
     hamburger.addEventListener("click", () => {
-    const currentState = hamburger.getAttribute("data-state");
+      const currentState = hamburger.getAttribute("data-state");
 
-    if (!currentState || currentState === "closed") {
-      hamburger.setAttribute("data-state", "opened");
-      hamburger.setAttribute("aria-expanded", "true");
-      menu.classList.toggle("mk-menu-open", true);
-    } else {
-      hamburger.setAttribute("data-state", "closed");
-      hamburger.setAttribute("aria-expanded", "false");
-      menu.classList.toggle("mk-menu-open", false);
-    }
-  });
+      if (!currentState || currentState === "closed") {
+        hamburger.setAttribute("data-state", "opened");
+        hamburger.setAttribute("aria-expanded", "true");
+        menu.classList.toggle("mk-menu-open", true);
+      } else {
+        hamburger.setAttribute("data-state", "closed");
+        hamburger.setAttribute("aria-expanded", "false");
+        menu.classList.toggle("mk-menu-open", false);
+      }
+    });
+
+    /*=============== SCROLL LISTENER ==================*/
+    window.addEventListener('scroll', () => {
+      const topScroll = window.scrollY; // Current scroll position
+
+      // Set the background color
+      document.getElementsByTagName('nav')[0].classList.toggle('scroll-bg', topScroll > 0);
+    });
 
     /*=========== THEME TOGGLE ==============*/
     (function() {
