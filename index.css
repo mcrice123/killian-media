@@ -66,6 +66,7 @@
     --tag-cms: #D9A05B;
     --tag-mvc: #6FA8DC;
     --border: #2A343E;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 20px rgba(30,35,40,0.05);
     --shape-opacity: 0.5;
     --logo-filter: grayscale(1) invert(1) opacity(0.4);
     --logo-filter-hover: grayscale(0) invert(1) opacity(1);
@@ -99,6 +100,7 @@
     --tag-cms: #D9A05B;
     --tag-mvc: #6FA8DC;
     --border: #2A343E;
+    --shadow: 0 1px 10px rgba(0, 0, 0, 0.65);
     --logo-filter: grayscale(1) invert(1) opacity(0.4);
     --logo-filter-hover: grayscale(0) invert(1) opacity(1);
     --backdrop: rgba(0, 0, 0, .80);
@@ -166,7 +168,12 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     background: var(--panel);
     border: 1px solid var(--border);
     transition: background 0.2s, color 0.2s;
-    &.mk-large { font-size: 14px; padding: 8px 16px; }
+    &.mk-large { 
+        font-size: 14px; 
+        padding: 16px 24px; 
+        border-radius: 12px;
+        @media screen and (max-width: 768px) { padding: 8px 16px; border-radius: 8px; }
+    }
     &:hover {
         border-color: var(--accent-dim);
         transform: translateY(-4px);
@@ -317,9 +324,7 @@ section {
     width: 100%;
     height: 60px;
     z-index: 4;
-    &.scroll-bg {
-        background-color: var(--bg);
-    }
+    &.scroll-bg { background-color: var(--bg); box-shadow: var(--shadow); }
 }
 .mk-navbar-left,
 .mk-navbar-center,
@@ -480,6 +485,7 @@ section {
       color: var(--text-dim);
       max-width: 560px;
       margin: 0 auto 36px;
+      @media screen and (max-width: 768px ) { margin: 0 auto 18px; }
     }
     @media screen and (max-width: 768px) { padding: 100px 0 50px; }
 }
