@@ -153,6 +153,18 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     color: var(--text-dim);
     margin: 0;
 }
+.mk-disclaimer::before,
+.mk-disclaimer::after {
+    content: "*";
+    color: var(--error);
+    font-weight: 900 !important;
+    font-family: var(--sans-serif-font) !important;
+    font-size: 18px;
+}
+.mk-disclaimer {
+    &.front { &::after { display: none; } }
+    &.back { &::before { display: none; } }
+}
 
 .mk-button,
 .mk-button-primary {
