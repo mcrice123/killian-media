@@ -3,13 +3,17 @@
   src: url("fonts/Inter-Regular.woff2") format("woff2"),
        url("fonts/Inter-Regular.woff") format("woff");
 }
-
+@font-face {
+    font-family: "Inter";
+    src: url("fonts/Inter18pt-Bold.woff") format("woff"),
+       url("fonts/Inter18pt-Bold.woff2") format("woff2");
+    font-weight: 900;
+}
 @font-face {
     font-family: "Space Grotesk";
     src: url("fonts/SpaceGrotesk-Bold.woff") format("woff2"),
          url("fonts/SpaceGrotesk-Bold.woff2") format("woff");
 }
-
 @font-face {
     font-family: "JetBrains Mono";
     src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2"),
@@ -425,8 +429,6 @@ section {
 
 /*=============== Hero Section Styles ==============*/
 #home {
-    
-
     position: relative;
     background: var(--bg);
     color: var(--text);
@@ -451,8 +453,8 @@ section {
         text-align: center;
     }
     h1 {
-        font-family: var(--heading-font);
-        font-weight: 600;
+        font-family: var(--sans-serif-font);
+        font-weight: 900;
         font-size: clamp(38px, 6vw, 64px);
         line-height: 1.08;
         letter-spacing: -0.01em;
@@ -482,8 +484,12 @@ section {
     }
 }
 
-/* -- Tech Marquee Styles -- */
+/*================ About Styles ==================*/
+.mk-profile-img-contain {
 
+}
+
+/*=============== Tech Marquee Styles ==================*/
 #tech-marquee {
     position: relative;
     background: var(--bg);
@@ -492,90 +498,56 @@ section {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     overflow: hidden;
     transition: background 0.3s ease, color 0.3s ease;
+    & * { box-sizing: border-box; }
+    .marquee-label {
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        text-align: center;
+        margin: 0 0 28px;
+        &::before { content: "// "; color: var(--accent); }
+    }
+    .marquee-mask {
+        position: relative;
+        width: 100%;
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+    }
+    .marquee-track {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        gap: 72px;
+        animation: tech-scroll 22s linear infinite;
+        &:hover { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) { 
+            animation: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    .logo-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        flex-shrink: 0;
+        img {
+            height: 100%;
+            width: auto;
+            filter: var(--logo-filter);
+            transition: filter 0.25s ease;
+        }
+        &:hover { img { filter: var(--logo-filter-hover); } }
+    }
 }
-
-#tech-marquee * { box-sizing: border-box; }
-
-#tech-marquee .marquee-label {
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    text-align: center;
-    margin: 0 0 28px;
-}
-#tech-marquee .marquee-label::before { content: "// "; color: var(--accent); }
-
-#tech-marquee .theme-toggle {
-    position: absolute;
-    top: 16px;
-    right: 24px;
-    font-family: var(--monospaced-font);
-    font-size: 12px;
-    color: var(--text-dim);
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 6px 14px;
-    cursor: pointer;
-}
-#tech-marquee .theme-toggle:hover { color: var(--text); }
-#tech-marquee .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-#tech-marquee .marquee-mask {
-    position: relative;
-    width: 100%;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
-}
-
-#tech-marquee .marquee-track {
-    display: flex;
-    align-items: center;
-    width: max-content;
-    gap: 72px;
-    animation: tech-scroll 22s linear infinite;
-}
-
-#tech-marquee .marquee-track:hover {
-    animation-play-state: paused;
-}
-
-#tech-marquee .logo-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    flex-shrink: 0;
-}
-
-#tech-marquee .logo-item img {
-    height: 100%;
-    width: auto;
-    filter: var(--logo-filter);
-    transition: filter 0.25s ease;
-}
-
-#tech-marquee .logo-item:hover img {
-    filter: var(--logo-filter-hover);
-}
-
 @keyframes tech-scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
 }
-
-@media (prefers-reduced-motion: reduce) {
-    #tech-marquee .marquee-track {
-        animation: none;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
-
-/* -- Work Section Styles -- */
+/*========== Theme Toggle ============*/
 .theme-toggle {
     position: absolute;
     top: 0;
@@ -595,7 +567,7 @@ section {
     &:hover { color: var(--text); }
     &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
-
+/*============= Filter Buttons ================*/
 .filters {
     display: flex;
     gap: 8px;
