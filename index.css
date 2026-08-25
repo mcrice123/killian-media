@@ -201,6 +201,7 @@ address, dl, fieldset, figure, ol, p, pre, ul {
     height: auto;
     width: auto;
     margin-top: 8px;
+    margin-bottom: 8px;
     &:not(:last-child) { margin-right: 4px; }
     & > div { width: 24px; height: 24px; }
     img {
@@ -242,6 +243,7 @@ section {
     position: relative; 
     padding: 96px 24px 112px;
     & * { box-sizing: border-box; }
+    @media screen and (max-width: 768px) { padding: 56px 24px 52px; }
 }
 .mk-container {
     display: flow root;
@@ -264,10 +266,7 @@ section {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    .mk-row-img { 
-        width: 40%; display: inline; 
-        img { width: 100%;}
-    }
+    .mk-row-img { width: 40%; display: inline; img { width: 100%; } }
     .mk-row-text {
         display: inline-flex;
         flex-direction: column;
@@ -277,6 +276,8 @@ section {
     @media screen and (max-width: 768px) {
         flex-direction: column;
         text-align: center;
+        .mk-row-img { width: 100%; max-width: 280px; }
+        .mk-row-text { width: 100%; }
     }
 }
 .mk-header {
@@ -391,6 +392,9 @@ section {
         }
         &.mk-menu-open { display: inline-flex; }
     }
+    @media screen and (max-width: 500px) { 
+        &.mk-menu-open  { height: 120px; flex-wrap: wrap; } 
+    }
 }
 /*============ Logo =============*/
 .mk-navbar-brand {
@@ -477,6 +481,7 @@ section {
       max-width: 560px;
       margin: 0 auto 36px;
     }
+    @media screen and (max-width: 768px) { padding: 100px 0 50px; }
 }
 /*================ About Styles ==================*/
 .mk-profile-img-contain {
@@ -755,6 +760,31 @@ section {
         z-index: 4;
         cursor: pointer;
         text-decoration: none;
+    }
+    @media screen and (max-width: 768px) {
+        .mk-modal-inner {
+            flex-direction: column;
+            width: 80%;
+        }
+        .mk-modal__photo { 
+            width: 100%; 
+            height: 160px; 
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 16px;
+            img { 
+                width: auto;
+                height: auto;
+                max-width: 848px;
+                object-fit: none;
+                max-height: 1264px;
+                object-position: 50% 540px;
+            }
+        }
+        .mk-modal__text {
+            width: 90%;
+            height: auto;
+            padding: 12px;
+        }
     }
 }
 
