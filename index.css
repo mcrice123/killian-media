@@ -681,6 +681,8 @@ section {
     font-size: 14px;
     font-weight: 600;
     color: var(--accent);
+    &.about { margin: 24px 0; }
+    @media screen and (max-width: 768px) { &.about { margin: 12px 0; justify-content: center; } }
 }
 .card:hover .card-footer,
 .card:focus-visible .card-footer { color: #7FD4C8; }
